@@ -1,42 +1,81 @@
-# testovoe
+## testovoe
 
-This template should help get you started developing with Vue 3 in Vite.
+Небольшое тестовое приложение на **Vue 3 + Vite** для просмотра погоды по выбранному городу:
 
-## Recommended IDE Setup
+- можно ввести город вручную;
+- можно определить город по геолокации (через `navigator.geolocation`).
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Recommended Browser Setup
+## Переменные окружения
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+Для работы приложения нужен API‑ключ OpenWeather.
 
-## Type Support for `.vue` Imports in TS
+В корне проекта должен быть файл `.env` (или `.env.local`) с содержимым:
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+```bash
+VITE_OPENWEATHER_API_KEY=ВАШ_API_КЛЮЧ 
+```
 
-## Customize configuration
+Где `ВАШ_API_КЛЮЧ` — действующий ключ с сайта `https://openweathermap.org/`.  
+либо возьмите мой и вставьте в созданный .env  
 
-See [Vite Configuration Reference](https://vite.dev/config/).
 
-## Project Setup
+```properties
+VITE_OPENWEATHER_API_KEY=9981db463425a3833571ab2070965fc0
+```
 
-```sh
+---
+
+## Установка зависимостей
+
+В корне проекта:
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+---
 
-```sh
+## Запуск в режиме разработки
+
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+После запуска в терминале появится ссылка вида:
 
-```sh
+```text
+http://localhost:5173/
+```
+
+Перейдите по ней в браузере, чтобы открыть приложение.
+
+---
+
+## Сборка production-версии
+
+```bash
 npm run build
 ```
+
+После выполнения команды Vite соберёт оптимизированную сборку.  
+Готовые статические файлы будут находиться в папке `dist/`.
+
+---
+
+## Предпросмотр собранной версии
+
+```bash
+npm run preview
+```
+
+Команда поднимает локальный сервер и показывает именно то, что будет в production.  
+Адрес по умолчанию будет выведен в терминале, обычно это что-то вроде:
+
+```text
+http://localhost:4173/
+```
+
+---
+
